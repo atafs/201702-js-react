@@ -1,26 +1,37 @@
 import React from "react";
 
-import Footer from "./Footer";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default class Layout extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      title: "Welcome",
-    };
-  }
+    constructor() {
+        super();
+        this.state = {
+            productName: "",
+            productNumber: "",
+        };
+    }
 
-  changeTitle(title) {
-    this.setState({title});
-  }
+    changeProductNumber(productNumber) {
+        this.setState({productNumber});
+    }
 
-  render() {
-    return (
-      <div>
-        <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
-        <Footer />
-      </div>
-    );
-  }
+    changeProductName(productName) {
+        this.setState({productName});
+    }
+
+    render() {
+        return (
+            <div>
+                <Header product={this.state.product}
+                        productName={this.state.productName}
+                        productNumber={this.state.productNumber}
+                        changeProductNumber={ ::this.changeProductNumber}
+                        changeProductName={ ::this.changeProductName}
+
+                />
+                <Footer />
+            </div>
+        );
+    }
 }
