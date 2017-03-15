@@ -1,5 +1,6 @@
 # 201702-js-react
-app reactJS
+app reactJS: Material Components for the web
+https://github.com/material-components/material-components-web
 
 ## Instructions to run
 1. Navigate to folder */1-basic-react*
